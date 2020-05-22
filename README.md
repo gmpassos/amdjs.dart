@@ -1,4 +1,4 @@
-# amdjs
+# AMDJS
 
 JavaScript AMD (Asynchronous Module Definition) Dart interoperability.  
 
@@ -21,12 +21,17 @@ main() async {
   // Check if AMD is already loaded in JS context (usually when RequireJS is already loaded in DOM):
   var inNativeMode = AMDJS.isNativeImplementationPresent() ;
  
-  // Loaded JQuery before:
+  // Load JQuery:
   var okJQuery = await AMDJS.require('jquery', '/js/jsquey.js' , globalJSVariableName: 'jquery') ;
  
   // Bootstrap recommends to add script tag inside body. The parameter `addScriptTagInsideBody` will be
   // used only when mimicking AMD, and ignored when running in native mode:
   var okBootstrap = await AMDJS.require('bootstrap', '/js/bootstrap.js', addScriptTagInsideBody: true) ;
+  
+  if (okJQuery && okBootstrap) {
+    print('Bootstrap correctly loaded (JQuery 1st, Bootstrap 2nd).');
+  }
+
 
 }
 ```
