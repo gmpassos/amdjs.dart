@@ -1,6 +1,10 @@
+## 1.0.2
+
+- Fix API documentation.
+
 ## 1.0.1
 
-- Add API documentation.
+- Added API documentation.
 - Fix a small bug.
 
 ## 1.0.0

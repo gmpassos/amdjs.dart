@@ -74,7 +74,7 @@ class AMDJS {
   }
 
   /// Tries to load a [module] using native AMD using [jsFullPath]. Is
-  /// recommended to use the function [require], that calls this native version
+  /// recommended to use the function [require], that calls [requireNative]
   /// only if is really needed.
   ///
   /// Throws [StateError] if native mode is not detected.
@@ -108,7 +108,7 @@ class AMDJS {
     return completer.future;
   }
 
-  /// Requires [module] that can by found at [jsFullPath]. Returns true if OK.
+  /// Requires a [module] that can be found at [jsFullPath]. Returns true if OK.
   static Future<bool> require(String module, String jsFullPath,
       {String globalJSVariableName,
       bool addScriptTagInsideBody = false}) async {
