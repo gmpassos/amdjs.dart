@@ -2,7 +2,7 @@
 
 JavaScript AMD (Asynchronous Module Definition) Dart interoperability.  
 
-When using JS libraries that uses AMD (like RequireJS), you need to call the JS function require() to correctly load
+When using JS libraries that uses AMD (RequireJS), you need to call the JS function require() to correctly load
 the library or unpredicted behaviors will happens.
 
 This Dart packages helps to transparently load JS libraries from Dart, using native AMD require(), when present, or just adding
@@ -17,8 +17,15 @@ import 'package:amdjs/amdjs.dart';
 
 // Running on browser:
 main() async {
-  
+ 
+  // Check if AMD is already loaded in JS context (usually when RequireJS is already loaded in DOM):
+  var inNativeMode = AMDJS.isNativeImplementationPresent() ;
+ 
+  // Loaded JQuery before:
   var okJQuery = await AMDJS.require('jquery', '/js/jsquey.js' , globalJSVariableName: 'jquery') ;
+ 
+  // Bootstrap recommends to add script tag inside body. The parameter `addScriptTagInsideBody` will be
+  // used only when mimicking AMD, and ignored when running in native mode:
   var okBootstrap = await AMDJS.require('bootstrap', '/js/bootstrap.js', addScriptTagInsideBody: true) ;
 
 }
@@ -27,7 +34,7 @@ main() async {
 ## Common issues loading JS libraries with Dart
 
 Since Dart, specially in development mode, uses AMD (RequireJS or similar) to load its packages,
-any other JS library inserted using `<script src"foo.js""></script>` won't load correctly. This
+any other JS library inserted using `<script src"library-x.js""></script>` won't load correctly. This
 package (`amdjs`) helps to identify that and correctly load libraries.
 
 ## Features and bugs
