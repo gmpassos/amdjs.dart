@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Change SDK minimal requirement to 2.7+
+
 ## 1.0.2
 
 - Fix API documentation.
