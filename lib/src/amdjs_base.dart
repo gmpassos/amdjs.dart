@@ -312,7 +312,8 @@ class AMDJS {
     }
 
     _log(false, "Loading module '$module': $jsPath");
-    var okJS = await addJavaScriptSource(jsPath, addScriptTagInsideBody);
+    var okJS = await addJavaScriptSource(jsPath,
+        addToBody: addScriptTagInsideBody, async: true);
     _log(false, "Module '$module' loaded> ok: $okJS");
     return okJS;
   }
