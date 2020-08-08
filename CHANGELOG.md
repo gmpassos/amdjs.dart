@@ -2,7 +2,7 @@
 
 - Fix mimic mode: when adding a script tag, add as `async`,
 to ensure that script tag execution can happen before full
-parse of main HTML document (like in RequireJS does).
+parse of main HTML document (like RequireJS does).
 - dom_tools: ^1.3.7
 - swiss_knife: ^2.5.8
 - CI: Browser tests.
