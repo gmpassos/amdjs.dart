@@ -1,3 +1,9 @@
+## 1.0.7
+
+- dom_tools: ^1.3.14
+- swiss_knife: ^2.5.16
+- pedantic: ^1.9.2
+
 ## 1.0.6
 
 - Fix mimic mode: when adding a script tag, add as `async`,

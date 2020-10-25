@@ -16,7 +16,7 @@ void main() {
 
       expect(requireOk, isTrue);
 
-      var result = callFunction('libFoo', [2, 3]);
+      var result = callJSFunction('libFoo', [2, 3]);
 
       expect(result, equals(6));
     });
