@@ -6,14 +6,8 @@ import 'package:swiss_knife/swiss_knife.dart';
 
 /// JavaScript AMD (Asynchronous Module Definition) Dart interoperability.
 class AMDJS {
-  static bool _verbose = true;
-
-  static bool get verbose => _verbose;
-
   /// verbose: If true logs usage to console.
-  static set verbose(bool value) {
-    _verbose = value ?? false;
-  }
+  static bool verbose = true;
 
   static void _log(bool native, String msg) {
     if (verbose) {
@@ -97,11 +91,11 @@ class AMDJS {
   }
 
   /// Returns true if native JS AMD is detected:
-  static Future<bool/*!*/>/*!*/ isNativeImplementationPresent() async {
+  static Future<bool> isNativeImplementationPresent() async {
     await load();
     var present =
-        context.callMethod('__AMDJS__isNativeImplementationPresent') as bool;
-    return present ?? false ;
+        context.callMethod('__AMDJS__isNativeImplementationPresent') as bool?;
+    return present ?? false;
   }
 
   /// Tries to load a [module] using native AMD using [jsFullPath]. Is
@@ -110,7 +104,7 @@ class AMDJS {
   ///
   /// Throws [StateError] if native mode is not detected.
   static Future<bool> requireNativeByPath(String module, String jsFullPath,
-      {String globalJSVariableName}) async {
+      {String? globalJSVariableName}) async {
     await load();
 
     var nativePresent = await isNativeImplementationPresent();
@@ -134,7 +128,7 @@ class AMDJS {
         _log(true, "Module '$module' loaded[by path]> ok: $ok");
         completer.complete(ok);
       }
-    ]) as bool;
+    ]) as bool?;
 
     return completer.future;
   }
@@ -146,7 +140,7 @@ class AMDJS {
   /// Throws [StateError] if native mode is not detected.
   static Future<bool> requireNativeByPackage(
       List<String> modules, String jsLocation, jsSubPath,
-      {String globalJSVariableName}) async {
+      {String? globalJSVariableName}) async {
     await load();
 
     var nativePresent = await isNativeImplementationPresent();
@@ -171,27 +165,27 @@ class AMDJS {
         _log(true, "Modules '$modules' loaded[by package]> ok: $ok");
         completer.complete(ok);
       }
-    ]) as bool;
+    ]) as bool?;
 
     return completer.future;
   }
 
   /// Requires a [module] that can be found at [jsFullPath]. Returns true if OK.
   static Future<bool> require(dynamic modules,
-      {String jsFullPath,
-      String jsLocation,
-      String jsSubPath,
-      String globalJSVariableName,
-      bool/*!*/ addScriptTagInsideBody = false}) async {
+      {String? jsFullPath,
+      String? jsLocation,
+      String? jsSubPath,
+      String? globalJSVariableName,
+      bool addScriptTagInsideBody = false}) async {
     var modulesList = <String>[];
 
     if (modules is String) {
       modulesList.add(modules);
     } else if (modules is Iterable) {
-      modulesList.addAll(modules.map((e) => '$e'));
+      modulesList.addAll(modules.where((e) => e != null).map((e) => '$e'));
     }
 
-    modulesList.removeWhere((e) => e == null || e.isEmpty);
+    modulesList.removeWhere((e) => e.isEmpty);
 
     if (await isNativeImplementationPresent()) {
       bool requireOK;
@@ -222,8 +216,6 @@ class AMDJS {
 
       return requireOK;
     } else {
-      addScriptTagInsideBody ??= false;
-
       var modulesFullPaths = _resolveModulesFullPath(
           modulesList, jsLocation, jsSubPath, jsFullPath);
 
@@ -241,11 +233,11 @@ class AMDJS {
     }
   }
 
-  static Map<String, List<String/*!*/>> _resolveModulesFullPath(
+  static Map<String, List<String>> _resolveModulesFullPath(
       List<String> modulesList,
-      String jsLocation,
-      String jsSubPath,
-      String jsFullPath) {
+      String? jsLocation,
+      String? jsSubPath,
+      String? jsFullPath) {
     var modulesFullPaths = <String, List<String>>{};
     var mainModule = modulesList.removeAt(0);
 
@@ -275,8 +267,8 @@ class AMDJS {
 
   static Future<bool> _requireMimic(String module, List<String> modulePath,
       bool addScriptTagInsideBody) async {
-    String jsLocation;
-    String jsPath;
+    String? jsLocation;
+    String? jsPath;
 
     if (modulePath.length == 2) {
       var subPath = modulePath[1];
