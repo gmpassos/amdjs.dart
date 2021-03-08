@@ -97,11 +97,11 @@ class AMDJS {
   }
 
   /// Returns true if native JS AMD is detected:
-  static Future<bool> isNativeImplementationPresent() async {
+  static Future<bool/*!*/>/*!*/ isNativeImplementationPresent() async {
     await load();
     var present =
         context.callMethod('__AMDJS__isNativeImplementationPresent') as bool;
-    return present;
+    return present ?? false ;
   }
 
   /// Tries to load a [module] using native AMD using [jsFullPath]. Is
@@ -182,7 +182,7 @@ class AMDJS {
       String jsLocation,
       String jsSubPath,
       String globalJSVariableName,
-      bool addScriptTagInsideBody = false}) async {
+      bool/*!*/ addScriptTagInsideBody = false}) async {
     var modulesList = <String>[];
 
     if (modules is String) {
@@ -241,7 +241,7 @@ class AMDJS {
     }
   }
 
-  static Map<String, List<String>> _resolveModulesFullPath(
+  static Map<String, List<String/*!*/>> _resolveModulesFullPath(
       List<String> modulesList,
       String jsLocation,
       String jsSubPath,
