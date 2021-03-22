@@ -1,6 +1,8 @@
 # AMDJS
 
 [![pub package](https://img.shields.io/pub/v/amdjs.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/amdjs)
+[![Null Safety](https://img.shields.io/badge/null-safety-brightgreen)](https://dart.dev/null-safety)
+
 [![CI](https://img.shields.io/github/workflow/status/gmpassos/amdjs.dart/Dart%20CI/master?logo=github-actions&logoColor=white)](https://github.com/gmpassos/amdjs.dart/actions)
 [![GitHub Tag](https://img.shields.io/github/v/tag/gmpassos/amdjs.dart?logo=git&logoColor=white)](https://github.com/gmpassos/amdjs.dart/releases)
 [![New Commits](https://img.shields.io/github/commits-since/gmpassos/amdjs.dart/latest?logo=git&logoColor=white)](https://github.com/gmpassos/amdjs.dart/network)
@@ -8,8 +10,6 @@
 [![Pull Requests](https://img.shields.io/github/issues-pr/gmpassos/amdjs.dart?logo=github&logoColor=white)](https://github.com/gmpassos/amdjs.dart/pulls)
 [![Code size](https://img.shields.io/github/languages/code-size/gmpassos/amdjs.dart?logo=github&logoColor=white)](https://github.com/gmpassos/amdjs.dart)
 [![License](https://img.shields.io/github/license/gmpassos/amdjs.dart?logo=open-source-initiative&logoColor=green)](https://github.com/gmpassos/amdjs.dart/blob/master/LICENSE)
-[![Funding](https://img.shields.io/badge/Donate-yellow?labelColor=666666&style=plastic&logo=liberapay)](https://liberapay.com/gmpassos/donate)
-[![Funding](https://img.shields.io/liberapay/patrons/gmpassos.svg?logo=liberapay)](https://liberapay.com/gmpassos/donate)
 
 
 JavaScript AMD (Asynchronous Module Definition) Dart interoperability.  

@@ -1,3 +1,9 @@
+## 2.0.1
+
+- Sound null safety compatibility.
+- dom_tools: ^2.0.1
+- swiss_knife: ^3.0.6
+
 ## 2.0.0-nullsafety.1
 
 - Dart 2.12.0:
