@@ -1,3 +1,10 @@
+## 2.0.2
+
+- sdk: '>=2.13.0 <3.0.0'
+- dom_tools: ^2.1.0
+- swiss_knife: ^3.0.8
+- lints: ^1.0.1
+
 ## 2.0.1
 
 - Sound null safety compatibility.
