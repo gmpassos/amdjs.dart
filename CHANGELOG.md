@@ -1,3 +1,9 @@
+## 2.0.3
+
+- Improved GitHub CI.
+- swiss_knife: ^3.1.0
+- dependency_validator: ^3.1.0
+
 ## 2.0.2
 
 - sdk: '>=2.13.0 <3.0.0'

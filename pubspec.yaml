@@ -1,6 +1,6 @@
 name: amdjs
 description: JavaScript AMD (Asynchronous Module Definition) Dart interoperability.
-version: 2.0.2
+version: 2.0.3
 homepage: https://github.com/gmpassos/amdjs.dart
 
 environment:
@@ -8,11 +8,12 @@ environment:
 
 dependencies:
   dom_tools: ^2.1.0
-  swiss_knife: ^3.0.8
+  swiss_knife: ^3.1.0
 
 dev_dependencies:
   lints: ^1.0.1
   test: ^1.16.8
+  dependency_validator: ^3.1.0
 
 #dependency_overrides:
 #  dom_tools:
