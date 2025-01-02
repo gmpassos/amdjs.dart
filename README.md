@@ -3,7 +3,7 @@
 [![pub package](https://img.shields.io/pub/v/amdjs.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/amdjs)
 [![Null Safety](https://img.shields.io/badge/null-safety-brightgreen)](https://dart.dev/null-safety)
 
-[![CI](https://img.shields.io/github/workflow/status/gmpassos/amdjs.dart/Dart%20CI/master?logo=github-actions&logoColor=white)](https://github.com/gmpassos/amdjs.dart/actions)
+[![Dart CI](https://github.com/gmpassos/amdjs.dart/actions/workflows/dart.yml/badge.svg)](https://github.com/gmpassos/amdjs.dart/actions/workflows/dart.yml)
 [![GitHub Tag](https://img.shields.io/github/v/tag/gmpassos/amdjs.dart?logo=git&logoColor=white)](https://github.com/gmpassos/amdjs.dart/releases)
 [![New Commits](https://img.shields.io/github/commits-since/gmpassos/amdjs.dart/latest?logo=git&logoColor=white)](https://github.com/gmpassos/amdjs.dart/network)
 [![Last Commits](https://img.shields.io/github/last-commit/gmpassos/amdjs.dart?logo=git&logoColor=white)](https://github.com/gmpassos/amdjs.dart/commits/master)
