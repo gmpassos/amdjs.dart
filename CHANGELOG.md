@@ -1,3 +1,9 @@
+## 3.0.0-beta.2
+
+- sdk: '>=3.6.0 <4.0.0'
+
+- dom_tools: ^3.0.0-beta.4
+
 ## 3.0.0-beta.1
 
 - Change to `dart:js_interop` (and package `js_interop_utils`).
