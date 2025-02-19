@@ -10,7 +10,7 @@ void main() {
     setUp(() {});
 
     test('isNativeImplementationPresent', () async {
-      expect(await AMDJS.isNativeImplementationPresent(), equals(false));
+      expect(AMDJS.isNativeImplementationPresent(), equals(false));
     });
 
     test('libFoo', () async {

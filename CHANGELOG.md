@@ -1,3 +1,20 @@
+## 3.0.0-beta.2
+
+- sdk: '>=3.6.0 <4.0.0'
+
+- dom_tools: ^3.0.0-beta.4
+
+## 3.0.0-beta.1
+
+- Change to `dart:js_interop` (and package `js_interop_utils`).
+
+- CI: test with `dart2js` and `dart2wasm` (on Chrome).
+
+- dom_tools: ^3.0.0-beta.3
+
+- lints: ^5.1.1
+- test: ^1.25.15
+
 ## 2.0.4
 
 - sdk: '>=3.4.0 <4.0.0'
