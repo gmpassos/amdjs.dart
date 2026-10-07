@@ -11,7 +11,6 @@
 [![Code size](https://img.shields.io/github/languages/code-size/gmpassos/amdjs.dart?logo=github&logoColor=white)](https://github.com/gmpassos/amdjs.dart)
 [![License](https://img.shields.io/github/license/gmpassos/amdjs.dart?logo=open-source-initiative&logoColor=green)](https://github.com/gmpassos/amdjs.dart/blob/master/LICENSE)
 
-
 JavaScript AMD (Asynchronous Module Definition) Dart interoperability.  
 
 When using JS libraries that uses AMD (RequireJS), you need to call the JS function require() to correctly load
@@ -19,6 +18,12 @@ the library or unpredicted behaviors will happens.
 
 This Dart packages helps to transparently load JS libraries from Dart, using native AMD require(), when present, or just adding
 a `<script src="library.js"></script>` into DOM.
+
+
+### Package `dart:js_interop`
+
+Starting with version `3.0.0`, the `amdjs` package relies on the [js_interop_utils](https://pub.dev/packages/js_interop_utils) package and `dart:js_interop`,
+replacing the deprecated `dart:js` library (deprecated as of Dart `3.7.0+`).
 
 ## Usage
 
