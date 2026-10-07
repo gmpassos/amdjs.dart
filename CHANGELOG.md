@@ -1,3 +1,15 @@
+## 3.0.0
+
+- Stable release of the `dart:js_interop` migration (`3.0.0-beta.x`).
+
+- sdk: '>=3.10.0 <4.0.0'
+
+- dom_tools: ^3.1.0
+
+- lints: ^6.1.0
+- test: ^1.32.0
+- dependency_validator: ^5.1.0
+
 ## 3.0.0-beta.2
 
 - sdk: '>=3.6.0 <4.0.0'
