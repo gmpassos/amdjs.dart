@@ -10,6 +10,12 @@
 - test: ^1.32.0
 - dependency_validator: ^5.1.0
 
+- Tests:
+  - More tests for the Dart mimic implementation (`jsLocation`/`jsSubPath` with sub-modules, missing
+    scripts, invalid arguments, load once).
+  - New integration tests with a native AMD implementation (RequireJS 2.3.7): load by path and by
+    package, `globalJSVariableName`, AMD dependencies, missing modules.
+
 ## 3.0.0-beta.2
 
 - sdk: '>=3.6.0 <4.0.0'
